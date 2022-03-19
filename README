@@ -1,0 +1,45 @@
+Copyright Sturzoiu Ioan-Teofil 311CA
+
+This homework was based on a "Console image editor", coded in C:
+
+The program can modify images: crop, rotate, save, load and apply certain
+filters (blur, sharpen, gaussian blur, edge detection).
+
+I use dynamic allocation and it works on both ppm and pgm formats.
+The commands are stated in the homework (LOAD, SELECT, and so on...)
+
+Explaination of the code
+========================
+I splitted the code among multiple files which work together to apply all
+commands. The files have suggestive names, so no further explaination is
+needed.
+
+The only function I feel like diving into is apply_photo. I check if the
+coordinates are OK and then use the algorithm detailed in the statement
+of our homework:
+
+-> parse through the matrix and for each pixel, I select its neighbours and
+multiply them by the value stored in each kernel_matrix.
+-> I store the results in a new matrix and then copy them in the old matrix.
+
+All photos are stored using double type for the precision, and I print all
+values as unsigned chars.
+
+I feel like comments are good enough for a complete understanding.
+
+
+Have a good day!
+
+     _________
+    / ======= \
+   / __________\
+  | ___________ |
+  | | -       | |
+  | |         | |
+  | |_________| |________________________
+  \=____________/   		          )
+  / """"""""""" \                       /
+ / ::::::::::::: \                  =D-'
+(_________________)
+
+
